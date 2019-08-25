@@ -64,16 +64,14 @@
         <url-pattern>/cloudwatch</url-pattern>
     </servlet-mapping>
      -->
-	<!-- 
 	<servlet>
-	    <servlet-name>RestreamerServlet</servlet-name>
-	    <servlet-class>com.red5pro.restreamer.servlet.RestreamerServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-	    <servlet-name>RestreamerServlet</servlet-name>
-	    <url-pattern>/restream</url-pattern>
-	</servlet-mapping>	
-	 -->
+      <servlet-name>RestreamerServlet</servlet-name>
+      <servlet-class>com.red5pro.restreamer.servlet.RestreamerServlet</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>RestreamerServlet</servlet-name>
+      <url-pattern>/restream</url-pattern>
+   </servlet-mapping>
     <servlet>
         <servlet-name>rtmpt</servlet-name>
         <servlet-class>org.red5.server.net.rtmpt.RTMPTServlet</servlet-class>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .btn {
+              border: none;
+              background-color: inherit;
+              padding: 14px 28px;
+              font-size: 16px;
+              cursor: pointer;
+              display: inline-block;
+            }
+            
+            .btn:hover {background: #eee;}
+            
+            .request {color: green;}
+            .animeInfo {color: dodgerblue;}
+            .getGoogle {color: orange;}
+            .danger {color: red;}
+            .default {color: black;}
+        </style>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <button class="btn request" onclick="request_function()">request</button>
+        <button class="btn animeInfo" onclick="get_anime()">animeInfo</button>
+        <button class="btn getGoogle" onclick="get_google()">getGoogle</button>
+        <script>
+            function request_function() {
+                axios.post('/restream', {
+                    "guid": "example/camera1",
+                    "context": "example",
+                    "name": "camera1",
+                    "level": 0,
+                    "parameters": {
+                        "type": "ipcam"
+                    }
+                }).then(response => {
+                    console.log(response);
+                });
+            }
+
+            function get_anime() {
+                axios.get("https://kitsu.io/api/edge/anime-characters/1").then(e => console.log(e));
+            }
+            
+            function get_google() {
+                axios.get("https://google.com").then(e => console.log(e));
+            }
+        </script>
+    </body>
+</html>
